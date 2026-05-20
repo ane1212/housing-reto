@@ -1,6 +1,8 @@
 
 import './App.css'
 
+import reader from './reader.tsx'; 
+
 function App() {
 
   return (
