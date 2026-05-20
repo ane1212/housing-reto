@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./backend/api
+      dockerfile: Dockerfile
+    container_name: data_api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend/api:/app
+    environment:
+      - FLASK_ENV=development
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: fs_frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    depends_on:
+      - backend
