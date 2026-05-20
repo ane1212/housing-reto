@@ -34,7 +34,7 @@ export default function HouseContainer({
 
   useEffect(() => {
     if (isSuccess && data) {
-      toast.success(`Precio cargado: $${data.price}`);
+      toast.success(`Precio cargado: $${data.prediction}`);
     }
 
     if (isError && error) {
