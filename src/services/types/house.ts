@@ -54,7 +54,7 @@ export const ProvinceName = {
 export type ProvinceName = (typeof ProvinceName)[keyof typeof ProvinceName];
 
 export interface HouseResponse {
-  price: number;
+  prediction: number;
 }
 
 export interface HouseRequest {
